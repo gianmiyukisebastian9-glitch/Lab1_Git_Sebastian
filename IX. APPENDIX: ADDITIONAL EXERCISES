@@ -1,0 +1,52 @@
+1. You and a remote teammate have unfortunately edited the same line of code in main.py at the same time. The version control system is now confused about which version to keep.
+Mission: Simulating this crisis locally, you must force Git into a "Merge Conflict" state to understand how the system pauses deployment.
+Setup: Create a new branch named 'simulation' specifically for this exercise.
+Trigger: Attempt to merge simulation into main.
+
+Assessment Data:
+
+1. Execution Log: List the sequence of commands you executed to create this crisis from scratch:
+
+•git status
+•git switch -c simulation
+•git add main.py
+•git commit -m "Change main.py on simulation"
+•git switch main
+•git add main.py
+•git commit -m "Change main.py on main"
+•git merge simulation
+
+
+2. System Artifact: Open the conflicted file. Transcribe the exact string Git generated between the HEAD marker and the separator.
+
+Conflict Text: print("Login Feature Enabled - MAIN") 
+
+2. A critical vulnerability has been discovered in the legacy code. Management requires a report detailing exactly who wrote the very first line of the application and when it was committed, to establish a chain of custody.
+Mission: Use the repository's forensic tools to inspect the line-by-line history of main.py without opening the text editor.
+
+Assessment Data:
+
+1. Which specific command provides a line-by-line historical annotation?
+
+Command: git blame main.py
+
+2. Forensic Report (Line 1):
+
+Author: Gian Miyuki T. Sebastian 
+
+Time of Commit: 2026-09-04 21:30:46 
+
+Commit Hash (First 4 chars): 0ac7
+
+3. A junior developer is attempting to clean up the repository by deleting branches. You need to verify that Git's internal safety protocols are working correctly to prevent the accidental deletion of unmerged work.
+Mission Create a "Rogue Branch containing a unique file that has NOT been merged into the main project. Then, attempt to delete this branch using the standard (safe) deletion protocol to verify that the system blocks you.
+
+Assessment Data:
+
+1. Safety Verification: Record the exact Error Message Git displayed when you attempted the deletion
+
+Error: error: The branch 'rogue' is not fully merge
+
+2. Override Protocol. The system error suggests a specific "Force" flag to bypass this safety check. What is that flag?
+
+Flag: -D
